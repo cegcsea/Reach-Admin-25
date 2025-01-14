@@ -61,7 +61,7 @@ export default function RegisterNewUser() {
         }
     }
     return (
-        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white">
             <div className="w-full p-6 m-auto  rounded-md shadow-md lg:max-w-xl">
                 <h2 className="mt-6 text-center text-3xl font-extrabold">
                     Register New User
@@ -69,46 +69,46 @@ export default function RegisterNewUser() {
                 <form className='mt-6 flex flex-col items-center'>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Name:</label>
-                        <input type="text" name="name" value={data.name} onChange={handleChange} className='input w-full max-w-xs input-bordered' required></input><br></br>
+                        <input type="text" name="name" value={data.name} onChange={handleChange} className='input w-full max-w-xs input-bordered text-red-800' required></input><br></br>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Email:</label>
-                        <input type="email" name="email" value={data.email} onChange={handleChange} className='input w-full max-w-xs input-bordered' required></input><br></br>
+                        <input type="email" name="email" value={data.email} onChange={handleChange} className='input w-full max-w-xs input-bordered text-red-800' required></input><br></br>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Mobile:</label>
-                        <input type="text" name="mobile" value={data.mobile} onChange={handleChange} className='input w-full max-w-xs input-bordered' required></input><br></br>
+                        <input type="text" name="mobile" value={data.mobile} onChange={handleChange} className='input w-full max-w-xs input-bordered text-red-800' required></input><br></br>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Year:</label>
-                        <input type="number" name="year" value={data.year} onChange={handleChange} className='input w-full max-w-xs input-bordered' required></input><br></br>
+                        <input type="number" name="year" value={data.year} onChange={handleChange} className='input w-full max-w-xs input-bordered text-red-800' required></input><br></br>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Department:</label>
-                        <input type="text" name="dept" value={data.dept} onChange={handleChange} className='input w-full max-w-xs input-bordered' required></input><br></br>
+                        <input type="text" name="dept" value={data.dept} onChange={handleChange} className='input w-full max-w-xs input-bordered text-red-800' required></input><br></br>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>College:</label>
-                        <input type="text" name="college" value={data.college} onChange={handleChange} className='input w-full max-w-xs input-bordered' required></input><br></br>
+                        <input type="text" name="college" value={data.college} onChange={handleChange} className='input w-full max-w-xs input-bordered text-red-800' required></input><br></br>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Host College:</label><br></br>
-                        <select className="select select-bordered w-full max-w-xs" name='hostCollege' type='text' onChange={handleChange}>
+                        <select className="select select-bordered w-full max-w-xs text-red-800" name='hostCollege' type='text' onChange={handleChange}>
                             <option disabled selected>--Select--</option>
                             <option value={"Government College of Technology, Coimbatore"}>Government College of Technology, Coimbatore</option>
                             <option value={"PSNA College of Engineering and Technology"}>PSNA College of Engineering and Technology</option>
                         </select>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
-                        <label className='text-sm font-semibold mb-2'>Password: </label>
-                        <input type="password" name="password" value={data.password} onChange={handleChange} className='input w-full max-w-xs input-bordered' required ></input><br></br>
+                        <label className='text-sm font-semibold mb-2 '>Password: </label>
+                        <input type="password" name="password" value={data.password} onChange={handleChange} className='input w-full  text-red-800 max-w-xs input-bordered' required ></input><br></br>
                     </div>
                     {error &&
                         <div className='text-orange-500 font-serif'>
                             {error}
                         </div>}
                     <div className='mt-6'>
-                        <input type="submit" value="Submit" onClick={handleSubmit} className='w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600'></input>
+                        <input type="submit" value="Submit" onClick={handleSubmit} className="cursor-pointer w-full px-4 py-2 tracking-wide text-white font-bold bg-gradient-to-r from-[#702b2b] via-[#9d0505] to-[#8a1818] rounded-2xl shadow-lg hover:shadow-xl focus:outline-none transition-transform duration-200 transform hover:scale-105 active:scale-95"></input>
                     </div>
                 </form>
             </div>

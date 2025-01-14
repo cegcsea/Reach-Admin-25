@@ -63,7 +63,7 @@ const WorkshopCashPayment = () => {
           <option value={"PSNA College of Engineering and Technology"}>PSNA College of Engineering and Technology</option>
         </select>
       </div>
-      <button className="btn btn-primary ml-10" onClick={fetchData}>Fetch</button>
+      <button className="btn btn-primary ml-10 cursor-pointer px-4 py-2 tracking-wide text-white font-bold bg-gradient-to-r from-[#702b2b] via-[#9d0505] to-[#8a1818] rounded-2xl shadow-lg hover:shadow-xl focus:outline-none transition-transform duration-200 transform hover:scale-105 active:scale-95" onClick={fetchData}>Fetch</button>
       {data.length !== 0 && <div className='p-5'>
         <div className='flex flex-row items-center'>
           <div className="dropdown">

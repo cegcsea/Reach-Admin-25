@@ -40,7 +40,7 @@ const LoginPage = () => {
     }
   }
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white">
       <div className="w-full p-6 m-auto  rounded-md shadow-md lg:max-w-xl">
         <h2 className="mt-6 text-center text-3xl font-extrabold">
           Login
@@ -59,7 +59,17 @@ const LoginPage = () => {
               {error}
             </div>}
           <div className='mt-6'>
-            <input type="submit" value="Submit" onClick={handleSubmit} className='w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600'></input>
+          <input
+  type="submit"
+  value="Submit"
+  onClick={handleSubmit}
+  className="cursor-pointer w-full px-4 py-2 tracking-wide text-white font-bold bg-gradient-to-r from-[#702b2b] via-[#9d0505] to-[#8a1818] rounded-2xl shadow-lg hover:shadow-xl focus:outline-none transition-transform duration-200 transform hover:scale-105 active:scale-95"
+  style={{
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(138, 43, 226, 0.6)',
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
+  }}
+/>
+
           </div>
         </form>
       </div>
