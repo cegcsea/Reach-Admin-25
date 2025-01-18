@@ -16,29 +16,33 @@ const LoginPage = () => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (data.email === "" || data.password === "") {
-      setError("Please enter a valid username and password");
-      return;
-    }
     try {
-      Swal.fire({
-        title: 'Loading...',
-        allowOutsideClick: false,
-        showConfirmButton: false
-      });
       const response = await axios.post('/admin/login', {
         email: data.email.toString(),
-        password: data.password.toString()
-      })
+        password: data.password.toString(),
+      });
+  
+      console.log("API Response:", response);
       Swal.close();
-      Swal.fire({ title: "Login Successfull", icon: "success" })
-      login(response.data.data.token);
-      navigate('/dashboard')
+      Swal.fire({ title: "Login Successful", icon: "success" });
+      
+      // Ensure you access `data` properly
+      const token = response.data?.token;
+      console.log("Token:", token);
+  
+      login(token);
+      navigate('/dashboard');
     } catch (error) {
+      console.error("Error Response:", error.response); // Log full error details
       Swal.close();
-      Swal.fire({ title: error.response.data.error, text: error.response.data.message, icon: "error" })
+      Swal.fire({
+        title: error.response?.data?.error || "Error",
+        text: error.response?.data?.message || "An unexpected error occurred.",
+        icon: "error",
+      });
     }
-  }
+  };
+  
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-black text-white">
       <div className="w-full p-6 m-auto  rounded-md shadow-md lg:max-w-xl">
