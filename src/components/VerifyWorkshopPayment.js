@@ -60,7 +60,7 @@ const VerifyWorkshopPayment = () => {
             <li><button onClick={() => setFilter("hostCollege")}>Host College</button></li>
           </ul>
         </div>
-        <input type="text" placeholder={filter === "" ? `Select filter and type here` : `Type ${filter} Here`} className="text-red-800 input input-bordered w-full text-white" value={filterData} onChange={handleFilterDataChange} />
+        <input type="text" placeholder={filter === "" ? `Select filter and type here` : `Type ${filter} Here`} className="text-red-800 input input-bordered w-full " value={filterData} onChange={handleFilterDataChange} />
       </div>
       {filteredData.map((d) => (
         <Card1 data={d} />

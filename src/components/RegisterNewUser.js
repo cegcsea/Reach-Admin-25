@@ -54,6 +54,7 @@ export default function RegisterNewUser() {
                 })
                 Swal.close();
                 Swal.fire({ title: "User registered successfully", text: "Reach ID: " + response.data.data.abacusId, icon: "success" })
+                
             } catch (error) {
                 Swal.close();
                 Swal.fire({ title: error.response.data.error, text: error.response.data.message, icon: "error" })

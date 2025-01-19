@@ -40,11 +40,11 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
 
     return (
         <div className="collapse collapse-arrow bg-base-200">
-            <input type="radio" name="my-accordion-2"/>
-            <div className="collapse-title text-md font-medium z-0">
+            <input type="radio" name="my-accordion-2" className='text-black' />
+            <div className="collapse-title text-md text-black font-medium z-0">
                 {data.title}
             </div>
-            <div className="collapse-content">
+            <div className="collapse-content ">
                 <div className="card card-compact w-full bg-neutral shadow-xl text-neutral-content">
                     <div className="card-body items-center text-center">
                         <div className='overflow-x-auto'>
