@@ -27,6 +27,7 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                         "token": localStorage.getItem('token')
                     }
                 })
+                console.log(data.id);
                 Swal.close();
                 setData(fullData.filter(d => d.id !== data.id))
                 setFilteredData(fullFilteredData.filter(d => d.id !== data.id))
