@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Swal from 'sweetalert2';
 import axios from '../api/axios';
+
 const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) => {
     const reply = async (e) => {
         e.preventDefault();
@@ -12,7 +13,8 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, Verified'
-        })
+        });
+
         if (result.isConfirmed) {
             try {
                 Swal.fire({
@@ -20,21 +22,31 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                     allowOutsideClick: false,
                     showConfirmButton: false
                 });
-                await axios.post('/admin/set-query-replied', {
+                console.log('Data ID:', data.id); // Ensure this is valid
+
+
+                // Update query status to 'replied' in the backend using PUT
+                await axios.put('/admin/set-query-replied', {
                     id: data.id
                 }, {
                     headers: {
                         "token": localStorage.getItem('token')
                     }
-                })
-                console.log(data.id);
+                });
+                console.log(`/admin/set-query-replied`);
+
+
                 Swal.close();
-                setData(fullData.filter(d => d.id !== data.id))
-                setFilteredData(fullFilteredData.filter(d => d.id !== data.id))
-                await Swal.fire({ title: "Verification successful", icon: "success" })
+
+                // Update frontend data to remove the replied query
+                setData(fullData.filter(d => d.id !== data.id));
+                setFilteredData(fullFilteredData.filter(d => d.id !== data.id));
+
+                await Swal.fire({ title: "Verification successful", icon: "success" });
+
             } catch (error) {
                 Swal.close();
-                await Swal.fire({ title: error.response.data.error, text: error.response.data.message, icon: "error" })
+                await Swal.fire({ title: error.response?.data?.error || "Error", text: error.response?.data?.message || "Something went wrong.", icon: "error" });
             }
         }
     };
@@ -45,7 +57,7 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
             <div className="collapse-title text-md text-black font-medium z-0">
                 {data.title}
             </div>
-            <div className="collapse-content ">
+            <div className="collapse-content">
                 <div className="card card-compact w-full bg-neutral shadow-xl text-neutral-content">
                     <div className="card-body items-center text-center">
                         <div className='overflow-x-auto'>
@@ -71,11 +83,9 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
+    );
+};
 
-    )
-}
-
-export default Card3
+export default Card3;

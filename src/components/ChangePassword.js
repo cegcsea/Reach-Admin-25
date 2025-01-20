@@ -29,7 +29,7 @@ const ChangePassword = () => {
         showConfirmButton: false
       });
       const token = localStorage.getItem('token');
-      await axios.post('/admin/change-password', {
+      await axios.put('/admin/change-password', {
         password: data.password.toString(),
         newPassword: data.newpassword.toString()
       }, {

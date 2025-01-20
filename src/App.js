@@ -19,8 +19,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route path='/' element={<LoginPage />}></Route>
-        <Route>
-        {/* <Route element={<RequireAuth />}> */}
+     
+        <Route element={<RequireAuth />}>
           <Route path='/dashboard' element={<Dashboard />}></Route>
           <Route path='/register-user' element={<RegisterNewUser />}></Route>
           <Route path='/add-admin' element={<AddAdmin />}></Route>
