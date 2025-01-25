@@ -22,8 +22,8 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                     allowOutsideClick: false,
                     showConfirmButton: false
                 });
-                console.log('Data ID:', data.id); // Ensure this is valid
 
+                console.log('Data ID:', data.id); // Ensure this is valid
 
                 // Update query status to 'replied' in the backend using PUT
                 await axios.put('/admin/set-query-replied', {
@@ -34,7 +34,6 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                     }
                 });
                 console.log(`/admin/set-query-replied`);
-
 
                 Swal.close();
 
@@ -53,7 +52,8 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
 
     return (
         <div className="collapse collapse-arrow bg-base-200">
-            <input type="radio" name="my-accordion-2" className='text-black' />
+            {/* Change the input type from 'radio' to 'checkbox' */}
+            <input type="checkbox" className='text-black' />
             <div className="collapse-title text-md text-black font-medium z-0">
                 {data.title}
             </div>
@@ -79,7 +79,7 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                             </table>
                         </div>
                         <div className="card-actions">
-                            <button className="btn btn-primary" onClick={reply}>Replied</button>
+                            <button className="btn btn-primary" onClick={reply}>Reply</button>
                         </div>
                     </div>
                 </div>
