@@ -34,8 +34,8 @@ export default function WorkshopList() {
                 <p className='text-xl font-bold mr-5'>Select Workshop: </p>
                 <select className="select select-bordered w-full max-w-xs" onChange={(e) => setWorkshopId(e.target.value)}>
                     <option disabled selected>--Select--</option>
-                    <option value={1}>MERN Stack Development</option>
-                    <option value={2}>Introduction to Machine Learning with Python</option>
+                    <option value={1}>Design for Impact: Power of UX</option>
+                    <option value={2}>Workshop on Generative AI</option>
                     <option value={3}>Placement Session</option>
                 </select>
             </div>
@@ -43,8 +43,8 @@ export default function WorkshopList() {
                 <p className='text-xl font-bold mr-5'>Select Host College: </p>
                 <select className="select select-bordered w-full max-w-xs" onChange={(e) => setHostCollege(e.target.value)}>
                     <option disabled selected>--Select--</option>
-                    <option value={"Government College of Technology, Coimbatore"}>Government College of Technology, Coimbatore</option>
-                    <option value={"PSNA College of Engineering and Technology"}>PSNA College of Engineering and Technology</option>
+                    <option value={"J.J. College of Engineering and Technology, Tiruchirappalli"}>J.J. College of Engineering and Technology,Tiruchirappalli</option>
+                {/* <option value={"PSNA College of Engineering and Technology"}>PSNA College of Engineering and Technology</option> */}
                 </select>
             </div>
             <button className="cursor-pointer ml-10 px-4 py-2 tracking-wide text-white font-bold bg-gradient-to-r from-[#702b2b] via-[#9d0505] to-[#8a1818] rounded-2xl shadow-lg hover:shadow-xl focus:outline-none transition-transform duration-200 transform hover:scale-105 active:scale-95" onClick={fetchData}>Fetch</button>
