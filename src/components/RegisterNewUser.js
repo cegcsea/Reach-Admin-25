@@ -96,8 +96,7 @@ export default function RegisterNewUser() {
                         <label className='text-sm font-semibold mb-2'>Host College:</label><br></br>
                         <select className="select select-bordered w-full max-w-xs text-red-800" name='hostCollege' type='text' onChange={handleChange}>
                             <option disabled selected>--Select--</option>
-                            <option value={"Government College of Technology, Coimbatore"}>Government College of Technology, Coimbatore</option>
-                            <option value={"PSNA College of Engineering and Technology"}>PSNA College of Engineering and Technology</option>
+                            <option value={"J.J. College of Engineering and Technology, Tiruchirappalli"}>"J.J. College of Engineering and Technology, Tiruchirappalli</option>
                         </select>
                     </div>
                     <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
