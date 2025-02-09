@@ -107,7 +107,7 @@ const Card1 = ({ data }) => {
         className="collapse-title text-xl font-medium z-0"
         onClick={toggleAccordion}
       >
-        {data.abacusId + "   " + data.name}
+        {data.users[0].abacusId + "   " + data.users[0].name}
       </div>
       {isOpen && (
         <div className="collapse-content">
@@ -128,7 +128,7 @@ const Card1 = ({ data }) => {
               </figure>
               <table className="border-collapse border border-slate-500">
                 <tbody>
-                  <tr>
+                  {/* <tr>
                     <td className="border p-2">AbacusId</td>
                     <td className="border p-2">{data.abacusId}</td>
                   </tr>
@@ -139,7 +139,7 @@ const Card1 = ({ data }) => {
                   <tr>
                     <td className="border p-2">Mobile</td>
                     <td className="border p-2">{data.mobile}</td>
-                  </tr>
+                  </tr> */}
                   <tr>
                     <td className="border p-2">Workshop Name</td>
                     <td className="border p-2">{data.workshopName}</td>
@@ -154,8 +154,19 @@ const Card1 = ({ data }) => {
                   </tr>
                   <tr>
                     <td className="border p-2">Host College</td>
-                    <td className="border p-2">{data.hostCollege}</td>
+                    <td className="border p-2">{data.users[0].hostCollege}</td>
                   </tr>
+                  {data.users.map((user) => {
+                    return (<tr>
+                      <td className="border p-2">User</td>
+                      <td className="border p-2">
+                        {user.name} <br/>
+                        {user.abacusId} <br/>
+                        {user.mobile}
+                      </td>
+                    </tr>)
+                  })
+                  }
                 </tbody>
               </table>
               <div className="card-actions justify-end">

@@ -24,7 +24,7 @@ const Card2 = ({ data, workshopId, fullData, setData, fullFilteredData, setFilte
                     showConfirmButton: false
                 });
                 await axios.post('/admin/workshop-cash-payment', {
-                    userId: data.id,
+                    users: [data.id],
                     workshopId: parseInt(workshopId)
                 }, {
                     headers: {
