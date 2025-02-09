@@ -33,7 +33,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <a className="btn btn-ghost text-xl" href='/dashboard'>Reach'24 Admin</a>
+                    <a className="btn btn-ghost text-xl" href='/dashboard'>Reach'25 Admin</a>
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle" onClick={handleLogout}>
