@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
 import ExportToExcel from "./ExportToExcel";
+const REACH_BASE_URL = `https://api2.abacus.org.in`
 export default function WorkshopPayments() {
   const [data, setData] = useState([]);
   const [workshopId, setWorkshopId] = useState(null);
@@ -196,7 +197,7 @@ export default function WorkshopPayments() {
                     <td>{item.paymentMobile}</td>
                     <td>
                       <a
-                        href={`${process.env.REACT_APP_API_BASE_URL}/images/${item.screenshot}`}
+                        href={`${REACH_BASE_URL}/images/${item.screenshot}`}
                       >
                         Click to view
                       </a>
