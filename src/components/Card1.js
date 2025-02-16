@@ -182,7 +182,7 @@ const Card1 = ({ data }) => {
           <dialog id={`modal_${data.transactionId}`} className="modal">
             <div className="modal-box">
               <img
-                src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.screenshot}`}
+                src={`${REACH_BASE_URL}/images/${data.screenshot}`}
                 alt="Screenshot"
                 className="rounded-xl"
               />
