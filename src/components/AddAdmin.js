@@ -28,7 +28,7 @@ const AddAdmin = () => {
       });
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:3001/admin/add-admin",
+        "/admin/add-admin",
         {
           password: data.password.toString(),
           email: data.email.toString(),

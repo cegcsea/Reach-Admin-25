@@ -30,7 +30,7 @@ const ChangePassword = () => {
       });
       const token = localStorage.getItem("token");
       await axios.put(
-        "http://localhost:3000/admin/change-password",
+        "/admin/change-password",
         {
           password: data.password.toString(),
           newPassword: data.newpassword.toString(),
