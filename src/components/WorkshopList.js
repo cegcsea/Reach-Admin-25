@@ -5,10 +5,10 @@ import ExportToExcel from "./ExportToExcel";
 export default function WorkshopList() {
   const [data, setData] = useState([]);
   const [workshopId, setWorkshopId] = useState(null);
-  const [hostCollege, setHostCollege] = useState("");
   const [paymentStatus, setPaymentStatus] = useState("");
+  const [hostCollege, setHostCollege] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  
+
   const fetchData = async () => {
     try {
       Swal.fire({
@@ -17,10 +17,9 @@ export default function WorkshopList() {
         showConfirmButton: false,
       });
       const response = await axios.post(
-        "/admin/workshop-registration-list",
+        "http://localhost:3001/admin/workshop-registration-list",
         {
           workshopId: parseInt(workshopId),
-          hostCollege: hostCollege,
           paymentStatus: paymentStatus,
         },
         {
@@ -52,7 +51,7 @@ export default function WorkshopList() {
       setFilteredData(data.filter((item) => item.status === status));
     }
   };
-  
+
   return (
     <>
       <div className="flex flex-row items-center mx-10 my-5">
@@ -64,29 +63,16 @@ export default function WorkshopList() {
           <option disabled selected>
             --Select--
           </option>
-          <option value={1}>Design for Impact: Power of UX</option>
-          <option value={2}>Workshop on Generative AI</option>
-          <option value={3}>Placement Session</option>
+          <option value={1}>
+            Emergence of AI Engineers and Evolution of Vibe coding
+          </option>
+          <option value={2}>
+            API & Kubernetes: The Dynamic Duo of Modern Tech
+          </option>
+          <option value={3}>Linux Networking Essentials</option>
         </select>
       </div>
-      <div className="flex flex-row items-center mx-10 my-5">
-        <p className="text-xl font-bold mr-5">Select Host College: </p>
-        <select
-          className="select select-bordered w-full max-w-xs"
-          onChange={(e) => setHostCollege(e.target.value)}
-        >
-          <option disabled selected>
-            --Select--
-          </option>
-          <option
-            value={
-              "J.J. College of Engineering and Technology, Tiruchirappalli"
-            }
-          >
-            J.J. College of Engineering and Technology,Tiruchirappalli
-          </option>
-        </select>
-      </div>
+
       <div className="flex flex-row items-center mx-10 my-5">
         <p className="text-xl font-bold mr-5">Select Payment Status: </p>
         <select
