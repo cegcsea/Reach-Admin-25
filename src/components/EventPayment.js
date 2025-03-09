@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import Card2 from "./Card2";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
-const WorkshopCashPayment = () => {
+import ExportToExcel from "./ExportToExcel";
+//const REACH_BASE_URL = "https://api2.abacus.org.in"
+const REACH_BASE_URL = `http://localhost:3001`;
+export default function EventPayments() {
   const [data, setData] = useState([]);
+  const [EventId, setEventId] = useState(null);
+  //const [hostCollege, setHostCollege] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [filter, setFilter] = useState("abacusId");
   const [filterData, setFilterData] = useState("");
-  const [workshopId, setWorkshopId] = useState(null);
-  //const [hostCollege, setHostCollege] = useState("");
   const handleFilterDataChange = (e) => {
     const newFilterData = e.target.value.toLowerCase();
     setFilterData(newFilterData);
@@ -29,9 +31,9 @@ const WorkshopCashPayment = () => {
         showConfirmButton: false,
       });
       const response = await axios.post(
-        "/admin/workshop-unpaid",
+        "/admin/Event-payment-list",
         {
-          workshopId: parseInt(workshopId),
+          EventId: parseInt(EventId),
           //hostCollege: hostCollege,
         },
         {
@@ -55,16 +57,20 @@ const WorkshopCashPayment = () => {
   return (
     <>
       <div className="flex flex-row items-center mx-10 my-5">
-        <p className="text-xl font-bold mr-5">Select Workshop: </p>
+        <p className="text-xl font-bold mr-5">Select Event: </p>
         <select
           className="select select-bordered w-full max-w-xs"
-          onChange={(e) => setWorkshopId(e.target.value)}
+          onChange={(e) => setEventId(e.target.value)}
         >
           <option disabled selected>
             --Select--
           </option>
-          <option value={1}>Emergence of AI Engineers and Evolution of Vibe coding</option>
-          <option value={2}>API & Kubernetes: The Dynamic Duo of Modern Tech</option>
+          <option value={1}>
+            Emergence of AI Engineers and Evolution of Vibe coding
+          </option>
+          <option value={2}>
+            API & Kubernetes: The Dynamic Duo of Modern Tech
+          </option>
           <option value={3}>Linux Networking Essentials</option>
         </select>
       </div>
@@ -87,14 +93,18 @@ const WorkshopCashPayment = () => {
         </select>
       </div> */}
       <button
-        className="btn btn-primary ml-10 cursor-pointer px-4 py-2 tracking-wide text-white font-bold bg-gradient-to-r from-[#702b2b] via-[#9d0505] to-[#8a1818] rounded-2xl shadow-lg hover:shadow-xl focus:outline-none transition-transform duration-200 transform hover:scale-105 active:scale-95"
+        className="cursor-pointer ml-10  px-6 py-2 tracking-wide text-white font-bold bg-gradient-to-r from-[#702b2b] via-[#9d0505] to-[#8a1818] rounded-2xl shadow-lg hover:shadow-xl focus:outline-none transition-transform duration-200 transform hover:scale-105 active:scale-95"
         onClick={fetchData}
       >
         Fetch
       </button>
       {data.length !== 0 && (
-        <div className="p-5">
-          <div className="flex flex-row items-center">
+        <>
+          <ExportToExcel
+            apiData={data}
+            fileName={`Event_Payments_${EventId}_2025`}
+          />
+          <div className="flex flex-row items-center m-2">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn m-1">
                 <svg
@@ -114,6 +124,9 @@ const WorkshopCashPayment = () => {
                 className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
+                  <button onClick={() => setFilter("name")}>Name</button>
+                </li>
+                <li>
                   <button onClick={() => setFilter("abacusId")}>
                     Abacus Id
                   </button>
@@ -124,10 +137,28 @@ const WorkshopCashPayment = () => {
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("name")}>Name</button>
+                  <button onClick={() => setFilter("email")}>Email</button>
                 </li>
                 <li>
-                  <button onClick={() => setFilter("email")}>Email</button>
+                  <button onClick={() => setFilter("transactionId")}>
+                    Transaction Id
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => setFilter("paymentMobile")}>
+                    Payment Mobile
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => setFilter("EventName")}>
+                    Event Name
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => setFilter("status")}>Status</button>
+                </li>
+                <li>
+                  <button onClick={() => setFilter("admin")}>Admin</button>
                 </li>
               </ul>
             </div>
@@ -143,20 +174,51 @@ const WorkshopCashPayment = () => {
               onChange={handleFilterDataChange}
             />
           </div>
-          {filteredData.map((d) => (
-            <Card2
-              data={d}
-              workshopId={workshopId}
-              fullData={data}
-              setData={setData}
-              fullFilteredData={filteredData}
-              setFilteredData={setFilteredData}
-            />
-          ))}
-        </div>
+          <div className="overflow-x-auto m-2">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Abacus ID</th>
+                  <th>Event Name</th>
+                  <th>Payment Mobile</th>
+                  <th>Screenshot</th>
+                  <th>Status</th>
+                  <th>Transaction ID</th>
+                  <th>Admin</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item.name}</td>
+                    <td>{item.email}</td>
+                    <td>{item.mobile}</td>
+                    <td>{item.abacusId}</td>
+                    <td>{item.EventName}</td>
+                    <td>{item.paymentMobile}</td>
+                    <td>
+                      <a
+                        href={`${REACH_BASE_URL}/images/${item.screenshot}`}
+                        target="_blank"
+                      >
+                        Click to view
+                      </a>
+                    </td>
+                    <td>{item.status}</td>
+                    <td>{item.transactionId}</td>
+                    <td>{item.admin}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
     </>
   );
-};
-
-export default WorkshopCashPayment;
+}

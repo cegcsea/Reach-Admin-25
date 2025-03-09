@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Card2 from "./Card2";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
-const WorkshopCashPayment = () => {
+const EventCashPayment = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [filter, setFilter] = useState("abacusId");
   const [filterData, setFilterData] = useState("");
-  const [workshopId, setWorkshopId] = useState(null);
+  const [EventId, setEventId] = useState(null);
   //const [hostCollege, setHostCollege] = useState("");
   const handleFilterDataChange = (e) => {
     const newFilterData = e.target.value.toLowerCase();
@@ -29,9 +29,9 @@ const WorkshopCashPayment = () => {
         showConfirmButton: false,
       });
       const response = await axios.post(
-        "/admin/workshop-unpaid",
+        "/admin/Event-unpaid",
         {
-          workshopId: parseInt(workshopId),
+          EventId: parseInt(EventId),
           //hostCollege: hostCollege,
         },
         {
@@ -55,10 +55,10 @@ const WorkshopCashPayment = () => {
   return (
     <>
       <div className="flex flex-row items-center mx-10 my-5">
-        <p className="text-xl font-bold mr-5">Select Workshop: </p>
+        <p className="text-xl font-bold mr-5">Select Event: </p>
         <select
           className="select select-bordered w-full max-w-xs"
-          onChange={(e) => setWorkshopId(e.target.value)}
+          onChange={(e) => setEventId(e.target.value)}
         >
           <option disabled selected>
             --Select--
@@ -146,7 +146,7 @@ const WorkshopCashPayment = () => {
           {filteredData.map((d) => (
             <Card2
               data={d}
-              workshopId={workshopId}
+              EventId={EventId}
               fullData={data}
               setData={setData}
               fullFilteredData={filteredData}
@@ -159,4 +159,4 @@ const WorkshopCashPayment = () => {
   );
 };
 
-export default WorkshopCashPayment;
+export default EventCashPayment;

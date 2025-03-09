@@ -15,6 +15,9 @@ import WorkshopPayments from "./components/WorkshopPayments";
 import Queries from "./components/Queries";
 import RegisterNewUser from "./components/RegisterNewUser";
 import RegisterCampusAmbassador from "./components/RegisterCA";
+import EventCashPayment from "./components/EventCashPayment";
+import EventPayments from "./components/EventPayment";
+import VerifyEventPayment from "./components/verifyEventPayments";
 function App() {
   return (
     <Routes>
@@ -35,13 +38,23 @@ function App() {
             path="/workshop-cash-payment"
             element={<WorkshopCashPayment />}
           ></Route>
+          <Route
+            path="/verify-event-payment"
+            element={<VerifyEventPayment />}
+          ></Route>
           <Route path="/event-list" element={<EventList />}></Route>
           <Route path="/workshop-list" element={<WorkshopList />}></Route>
+          <Route
+            path="/event-cash-payment"
+            element={<EventCashPayment />}
+          ></Route>
           <Route
             path="/workshop-payments"
             element={<WorkshopPayments />}
           ></Route>
           <Route path="/queries" element={<Queries />}></Route>
+          <Route path="/event-payments" element={<EventPayments />}></Route>
+
           <Route
             path="/register-ca"
             element={<RegisterCampusAmbassador />}

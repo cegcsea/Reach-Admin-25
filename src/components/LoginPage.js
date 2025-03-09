@@ -17,7 +17,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/admin/login", {
+      const response = await axios.post("/admin/login", {
         email: data.email.toString(),
         password: data.password.toString(),
       });

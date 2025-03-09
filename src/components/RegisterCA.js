@@ -42,7 +42,11 @@ export default function RegisterCampusAmbassador() {
           didOpen: () => Swal.showLoading(),
         });
 
-        const response = await axios.post("/admin/register-ca", data); // ✅ Update with correct backend endpoint
+        const response = await axios.post("/admin/register-ca", data, {
+          headers: {
+            token: localStorage.getItem("token"),
+          },
+        }); // ✅ Update with correct backend endpoint
 
         Swal.close();
         Swal.fire({
