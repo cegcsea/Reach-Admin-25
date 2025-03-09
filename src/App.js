@@ -14,6 +14,7 @@ import EventList from "./components/EventList";
 import WorkshopPayments from "./components/WorkshopPayments";
 import Queries from "./components/Queries";
 import RegisterNewUser from "./components/RegisterNewUser";
+import RegisterCampusAmbassador from "./components/RegisterCA";
 function App() {
   return (
     <Routes>
@@ -41,6 +42,10 @@ function App() {
             element={<WorkshopPayments />}
           ></Route>
           <Route path="/queries" element={<Queries />}></Route>
+          <Route
+            path="/register-ca"
+            element={<RegisterCampusAmbassador />}
+          ></Route>
         </Route>
         <Route path="*" element={<Missing />} />
       </Route>

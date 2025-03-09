@@ -46,7 +46,7 @@ export default function RegisterNewUser() {
           showConfirmButton: false,
         });
         const response = await axios.post(
-          "http://localhost:3001/admin/register-user",
+          "/admin/register-user",
           {
             name: data.name.toString(),
             email: data.email.toString(),
