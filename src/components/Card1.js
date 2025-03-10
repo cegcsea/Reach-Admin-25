@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
-const REACH_BASE_URL = "https://api2.abacus.org.in";
+const REACH_BASE_URL = "https://api.abacus.org.in";
 const Card1 = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -115,7 +115,8 @@ const Card1 = ({ data }) => {
             <div className="card-body items-center text-center">
               <figure className="px-10 pt-10">
                 <img
-                  src={`${process.env.BASE_URL}/images/${data.screenshot}`}
+                  //src={`${process.env.BASE_URL}/images/${data.screenshot}`}
+                  src={`${REACH_BASE_URL}/images/${data.screenshot}`}
                   width="100px"
                   onClick={() =>
                     document
@@ -183,7 +184,8 @@ const Card1 = ({ data }) => {
           <dialog id={`modal_${data.transactionId}`} className="modal">
             <div className="modal-box">
               <img
-                src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.screenshot}`}
+                //src={`${process.env.REACT_APP_API_BASE_URL}/images/${data.screenshot}`}
+                src={`${REACH_BASE_URL}/images/${data.screenshot}`}
                 alt="Screenshot"
                 className="rounded-xl"
               />
