@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
-const REACH_BASE_URL = "https://api2.abacus.org.in"
+const REACH_BASE_URL = "https://api2.abacus.org.in";
 const Card1 = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -115,7 +115,7 @@ const Card1 = ({ data }) => {
             <div className="card-body items-center text-center">
               <figure className="px-10 pt-10">
                 <img
-                  src={`${REACH_BASE_URL}/images/${data.screenshot}`}
+                  src={`${process.env.BASE_URL}/images/${data.screenshot}`}
                   width="100px"
                   onClick={() =>
                     document
@@ -157,16 +157,17 @@ const Card1 = ({ data }) => {
                     <td className="border p-2">{data.users[0].hostCollege}</td>
                   </tr>
                   {data.users.map((user) => {
-                    return (<tr>
-                      <td className="border p-2">User</td>
-                      <td className="border p-2">
-                        {user.name} <br/>
-                        {user.abacusId} <br/>
-                        {user.mobile}
-                      </td>
-                    </tr>)
-                  })
-                  }
+                    return (
+                      <tr>
+                        <td className="border p-2">User</td>
+                        <td className="border p-2">
+                          {user.name} <br />
+                          {user.abacusId} <br />
+                          {user.mobile}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
               <div className="card-actions justify-end">

@@ -203,7 +203,7 @@ export default function EventPayments() {
                     <td>{item.paymentMobile}</td>
                     <td>
                       <a
-                        href={`${REACH_BASE_URL}/images/${item.screenshot}`}
+                        href={`${process.env.BASE_URL}/images/${item.screenshot}`}
                         target="_blank"
                       >
                         Click to view
