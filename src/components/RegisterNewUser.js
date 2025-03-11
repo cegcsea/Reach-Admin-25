@@ -10,13 +10,19 @@ export default function RegisterNewUser() {
     dept: "",
     college: "",
     password: "",
+    accomodation: "",
+    referralCode: "",
   });
+  const handleSelectChange = (name, value) => {
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
   const [error, setError] = useState("");
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(data)
     if (
       data.email === "" ||
       data.password === "" ||
@@ -24,7 +30,8 @@ export default function RegisterNewUser() {
       data.name === "" ||
       data.mobile === "" ||
       data.dept === "" ||
-      data.college === ""
+      data.college === "" ||
+      data.accomodation === "" 
     ) {
       setError("Please enter a valid username and password");
       return;
@@ -55,6 +62,8 @@ export default function RegisterNewUser() {
             year: parseInt(data.year),
             dept: data.dept.toString(),
             college: data.college.toString(),
+            accomodation: data.accomodation,
+            referralCode: data.referralCode,
           },
           {
             headers: {
@@ -157,6 +166,43 @@ export default function RegisterNewUser() {
             ></input>
             <br></br>
           </div>
+          <div className="mb-2 w-64 sm:w-64 md:w-64 lg:w-80">
+            <label className="text-sm font-semibold mb-2">Accodomation:</label>
+            <select
+              placeholder="Do you need Accodomation in CEG?"
+              className="input w-full max-w-xs input-bordered text-red-800"
+              value={
+                data.accomodation === true
+                  ? "true"
+                  : data.accomodation === false
+                  ? "false"
+                  : ""
+              }
+              onChange={(e) =>
+                handleSelectChange(
+                  "accomodation",
+                  e.target.value === "true"
+                    ? true
+                    : e.target.value === "false"
+                    ? false
+                    : null
+                )
+              }
+              required
+            >
+              <option value="" disabled hidden>
+                Do you need Accodomation in CEG?
+              </option>
+              <option key="Yes" value="true">
+                Accomodation required
+              </option>
+              <option key="No" value="false">
+                Accomodation not required
+              </option>
+            </select>
+            <br></br>
+          </div>
+
           {/* <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Host College:</label><br></br>
                         <select className="select select-bordered w-full max-w-xs text-red-800" name='hostCollege' type='text' onChange={handleChange}>
@@ -164,6 +210,18 @@ export default function RegisterNewUser() {
                             <option value={"J.J. College of Engineering and Technology, Tiruchirappalli"}>"J.J. College of Engineering and Technology, Tiruchirappalli</option>
                         </select>
                     </div> */}
+          <div className="mb-2 w-64 sm:w-64 md:w-64 lg:w-80">
+            <label className="text-sm font-semibold mb-2 "> referralCode: </label>
+            <input
+              type="text"
+              name="referralCode"
+              placeholder="referralCode (optional)"
+              className="input w-full  text-red-800 max-w-xs input-bordered"
+              value={data.referralCode}
+              onChange={handleChange}
+            />
+            <br></br>
+          </div>
           <div className="mb-2 w-64 sm:w-64 md:w-64 lg:w-80">
             <label className="text-sm font-semibold mb-2 ">Password: </label>
             <input

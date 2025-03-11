@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
 import ExportToExcel from "./ExportToExcel";
-//const REACH_BASE_URL = "https://api.abacus.org.in"
-const REACH_BASE_URL = `http://localhost:3001`;
+const Abacus_BASE_URL = "https://api.abacus.org.in"
+//const Abacus_BASE_URL = `http://localhost:3001`;
 export default function WorkshopPayments() {
   const [data, setData] = useState([]);
   const [workshopId, setWorkshopId] = useState(null);
@@ -203,7 +203,7 @@ export default function WorkshopPayments() {
                     <td>{item.paymentMobile}</td>
                     <td>
                       <a
-                        href={`${process.env.BASE_URL}/images/${item.screenshot}`}
+                        href={`${Abacus_BASE_URL}/images/${item.screenshot}`}
                         target="_blank"
                       >
                         Click to view

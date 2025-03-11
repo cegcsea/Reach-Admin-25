@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Card1 from './Card1'
+import Card1Events from './Card1Events'
 import Swal from 'sweetalert2';
 import axios from '../api/axios';
 
@@ -33,8 +33,9 @@ const VerifyEventPayment = () => {
             "token": localStorage.getItem('token')
           }
         });
-        setData(response.data.data);
-        setFilteredData(response.data.data);
+        console.log(response.data.pendingPayments)
+        setData(response.data.pendingPayments);
+        setFilteredData(response.data.pendingPayments);
         Swal.close();
       } catch (error) {
         Swal.close();
@@ -63,7 +64,7 @@ const VerifyEventPayment = () => {
         <input type="text" placeholder={filter === "" ? `Select filter and type here` : `Type ${filter} Here`} className="text-red-800 input input-bordered w-full " value={filterData} onChange={handleFilterDataChange} />
       </div>
       {filteredData.map((d) => (
-        <Card1 data={d} />
+        <Card1Events data={d} />
       ))}
     </div>
   )

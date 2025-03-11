@@ -21,7 +21,7 @@ export default function WorkshopList() {
         {
           workshopId: parseInt(workshopId),
           //hostCollege: hostCollege,
-          paymentStatus: paymentStatus,
+          //paymentStatus: paymentStatus,
         },
         {
           headers: {

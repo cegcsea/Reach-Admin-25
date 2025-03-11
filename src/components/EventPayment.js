@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
 import ExportToExcel from "./ExportToExcel";
-//const REACH_BASE_URL = "https://api.abacus.org.in"
-const REACH_BASE_URL = `http://localhost:3001`;
+const Abacus_BASE_URL = "https://api.abacus.org.in"
+//const Abacus_BASE_URL = `http://localhost:3001`;
 export default function EventPayments() {
   const [data, setData] = useState([]);
   const [EventId, setEventId] = useState(null);
@@ -42,8 +42,8 @@ export default function EventPayments() {
           },
         }
       );
-      setData(response.data.data);
-      setFilteredData(response.data.data);
+      setData(response.data.paymentList);
+      setFilteredData(response.data.paymentList);
       Swal.close();
     } catch (error) {
       Swal.close();
@@ -65,13 +65,26 @@ export default function EventPayments() {
           <option disabled selected>
             --Select--
           </option>
-          <option value={1}>
-            Emergence of AI Engineers and Evolution of Vibe coding
+          <option value={1}>OSPC</option>
+          <option value={2}>BYTE BEGIN</option>
+          <option value={3}>BRAINWAVE.ML</option>
+          <option value={4}>CTRL+ESCAPE</option>
+          <option value={5}>READY.SET.HIRE!</option>
+          <option value={6}>GLITCH SNITCH</option>
+          <option value={7}>ACM Special</option>
+          <option value={8}>CSAU Special</option>
+          <option value={9}>TREASURE HUNT</option>
+          <option value={10}>IPL AUCTION</option>
+          <option value={11}>CHATGPT PULSE</option>
+          <option value={12}>Checkmate Chronicles</option>
+          <option value={13}>Collab with Quizzers Anonymous</option>
+          <option value={14}>OLPC</option>
+          <option value={15}>LIGHTS, CAMERA, REEL!</option>
+          <option value={16}>WAR OF THE RACKETS</option>
+          <option value={17}>Grand Cricket League (GCL)</option>
+          <option value={18}>
+            CSEA SUPER LEAGUE (CSL) - Kick, Pass, Goal!
           </option>
-          <option value={2}>
-            API & Kubernetes: The Dynamic Duo of Modern Tech
-          </option>
-          <option value={3}>Linux Networking Essentials</option>
         </select>
       </div>
       {/* <div className="flex flex-row items-center mx-10 my-5">
@@ -203,7 +216,7 @@ export default function EventPayments() {
                     <td>{item.paymentMobile}</td>
                     <td>
                       <a
-                        href={`${process.env.BASE_URL}/images/${item.screenshot}`}
+                        href={`${Abacus_BASE_URL}/images/${item.screenshot}`}
                         target="_blank"
                       >
                         Click to view
