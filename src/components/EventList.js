@@ -113,7 +113,7 @@ export default function EventList() {
               </tr>
             </thead>
             <tbody>
-              {data.map((item, index) => (
+              {(data||[]).map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.abacusId}</td>

@@ -131,7 +131,7 @@ export default function WorkshopList() {
               </tr>
             </thead>
             <tbody>
-              {filteredData.map((item, index) => (
+              {(filteredData||[]).map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.abacusId}</td>

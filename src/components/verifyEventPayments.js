@@ -63,7 +63,7 @@ const VerifyEventPayment = () => {
         </div>
         <input type="text" placeholder={filter === "" ? `Select filter and type here` : `Type ${filter} Here`} className="text-red-800 input input-bordered w-full " value={filterData} onChange={handleFilterDataChange} />
       </div>
-      {filteredData.map((d) => (
+      {(filteredData||[]).map((d) => (
         <Card1Events data={d} />
       ))}
     </div>

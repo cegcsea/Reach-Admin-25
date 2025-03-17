@@ -167,7 +167,7 @@ const Card1Events = ({ data }) => {
                     <td className="border p-2">Host College</td>
                     <td className="border p-2">{data.users[0].hostCollege}</td>
                   </tr> */}
-                  {data.users.map((user) => {
+                  {(data.users || []).map((user) => {
                     return (
                       <tr>
                         <td className="border p-2">User</td>

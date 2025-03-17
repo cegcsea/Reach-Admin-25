@@ -160,7 +160,7 @@ const EventCashPayment = () => {
               onChange={handleFilterDataChange}
             />
           </div>
-          {filteredData.map((d) => (
+          {(filteredData||[]).map((d) => (
             <Card2
               data={d}
               eventId={EventId}

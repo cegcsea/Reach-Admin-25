@@ -109,7 +109,7 @@ const VerifyWorkshopPayment = () => {
           onChange={handleFilterDataChange}
         />
       </div>
-      {filteredData.map((d) => (
+      {(filteredData||[]).map((d) => (
         <Card1 data={d} />
       ))}
     </div>
