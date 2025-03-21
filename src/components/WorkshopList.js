@@ -8,7 +8,7 @@ export default function WorkshopList() {
   //const [hostCollege, setHostCollege] = useState("");
   const [paymentStatus, setPaymentStatus] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  
+
   const fetchData = async () => {
     try {
       Swal.fire({
@@ -52,7 +52,7 @@ export default function WorkshopList() {
       setFilteredData(data.filter((item) => item.status === status));
     }
   };
-  
+
   return (
     <>
       <div className="flex flex-row items-center mx-10 my-5">
@@ -64,11 +64,15 @@ export default function WorkshopList() {
           <option disabled selected>
             --Select--
           </option>
-          "1": "Emergence of AI Engineers and Evolution of Vibe coding",
-  "2": "API & Kubernetes: The Dynamic Duo of Modern Tech",
-  "3": "Linux Networking Essentials"
-          <option value={1}>Emergence of AI Engineers and Evolution of Vibe coding</option>
-          <option value={2}>API & Kubernetes: The Dynamic Duo of Modern Tech</option>
+          "1": "Emergence of AI Engineers and Evolution of Vibe coding", "2": "
+          Workshop on APIs and Building Scalable and Modular Applications", "3":
+          "Linux Networking Essentials"
+          <option value={1}>
+            Emergence of AI Engineers and Evolution of Vibe coding
+          </option>
+          <option value={2}>
+            Workshop on APIs and Building Scalable and Modular Applications,
+          </option>
           <option value={3}>Linux Networking Essentials</option>
         </select>
       </div>
@@ -131,7 +135,7 @@ export default function WorkshopList() {
               </tr>
             </thead>
             <tbody>
-              {(filteredData||[]).map((item, index) => (
+              {(filteredData || []).map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.abacusId}</td>

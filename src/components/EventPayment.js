@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
 import ExportToExcel from "./ExportToExcel";
-const Abacus_BASE_URL = "https://api.abacus.org.in"
+const Abacus_BASE_URL = "https://api.abacus.org.in";
 //const Abacus_BASE_URL = `http://localhost:3001`;
 export default function EventPayments() {
   const [data, setData] = useState([]);
@@ -84,6 +84,9 @@ export default function EventPayments() {
           <option value={17}>Grand Cricket League (GCL)</option>
           <option value={18}>
             CSEA SUPER LEAGUE (CSL) - Kick, Pass, Goal!
+          </option>
+          <option value={21}>
+            Neonova - AU IEEE Computer Society's Ideathon
           </option>
         </select>
       </div>
@@ -205,7 +208,7 @@ export default function EventPayments() {
                 </tr>
               </thead>
               <tbody>
-                {(filteredData||[]).map((item, index) => (
+                {(filteredData || []).map((item, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{item.name}</td>

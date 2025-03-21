@@ -83,6 +83,9 @@ const EventCashPayment = () => {
           <option value={18}>
             CSEA SUPER LEAGUE (CSL) - Kick, Pass, Goal!
           </option>
+          <option value={21}>
+            Neonova - AU IEEE Computer Society's Ideathon
+          </option>
         </select>
       </div>
       {/* <div className="flex flex-row items-center mx-10 my-5">
@@ -160,7 +163,7 @@ const EventCashPayment = () => {
               onChange={handleFilterDataChange}
             />
           </div>
-          {(filteredData||[]).map((d) => (
+          {(filteredData || []).map((d) => (
             <Card2
               data={d}
               eventId={EventId}
