@@ -67,6 +67,9 @@ export default function EventList() {
           <option value={18}>
             CSEA SUPER LEAGUE (CSL) - Kick, Pass, Goal!
           </option>
+          <option value={21}>
+            Neonova - AU IEEE Computer Society's Ideathon
+          </option>
         </select>
       </div>
       {/* <div className="flex flex-row items-center mx-10 my-5">
@@ -95,10 +98,7 @@ export default function EventList() {
       </button>
       {data.length !== 0 && (
         <div className="overflow-x-auto">
-          <ExportToExcel
-            apiData={data}
-            fileName={`Event_${eventId}_2025`}
-          />
+          <ExportToExcel apiData={data} fileName={`Event_${eventId}_2025`} />
           <table className="table">
             <thead>
               <tr>
@@ -113,7 +113,7 @@ export default function EventList() {
               </tr>
             </thead>
             <tbody>
-              {(data||[]).map((item, index) => (
+              {(data || []).map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.abacusId}</td>
