@@ -47,10 +47,10 @@ export default function EventList() {
           <option disabled selected>
             --Select--
           </option>
-          <option value={1}>Pentacode</option>
-          <option value={2}>ML - Conquer</option>
-          <option value={3}>OSPC</option>
-          <option value={4}>Family Feud</option>
+          <option value={1}>UI Odyssey</option>
+          <option value={2}>CodeQuest</option>
+          <option value={3}>Query Kernel Arena</option>
+          <option value={4}>Musical Mania</option>
         </select>
       </div>
       <div className="flex flex-row items-center mx-10 my-5">

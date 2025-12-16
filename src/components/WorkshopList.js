@@ -64,8 +64,8 @@ export default function WorkshopList() {
           <option disabled selected>
             --Select--
           </option>
-          <option value={1}>Design for Impact: Power of UX</option>
-          <option value={2}>Workshop on Generative AI</option>
+          <option value={1}>Building LLM Applications from Scratch</option>
+          <option value={2}>Backend Development from Zero to API (Python + FastAPI)</option>
           <option value={3}>Placement Session</option>
         </select>
       </div>

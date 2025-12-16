@@ -63,8 +63,8 @@ const WorkshopCashPayment = () => {
           <option disabled selected>
             --Select--
           </option>
-          <option value={1}>Design for Impact: Power of UX</option>
-          <option value={2}>Workshop on Generative AI</option>
+          <option value={1}>Building LLM Applications from Scratch</option>
+          <option value={2}>Backend Development from Zero to API (Python + FastAPI)</option>
         </select>
       </div>
       <div className="flex flex-row items-center mx-10 my-5">
