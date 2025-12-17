@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "../api/axios";
-// const REACH_BASE_URL = "https://api2.abacus.org.in"
-const REACH_BASE_URL = `http://localhost:3001`
+const REACH_BASE_URL = "https://reach26.abacus.org.in"
+// const REACH_BASE_URL = `http://localhost:3001`
 const Card1 = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
