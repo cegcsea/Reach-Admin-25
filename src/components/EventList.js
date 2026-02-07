@@ -48,28 +48,20 @@ export default function EventList() {
             --Select--
           </option>
           <option value={1}>OSPC</option>
-          <option value={2}>BYTE BEGIN</option>
-          <option value={3}>BRAINWAVE.ML</option>
-          <option value={4}>CTRL+ESCAPE</option>
-          <option value={5}>READY.SET.HIRE!</option>
-          <option value={6}>GLITCH SNITCH</option>
-          <option value={7}>ACM Special</option>
-          <option value={8}>CSAU Special</option>
-          <option value={9}>TREASURE HUNT</option>
+          <option value={2}>GET SET GO</option>
+          <option value={3}>PREDICTRIX : ML EDITION</option>
+          <option value={4}>ALGOBAZZAR</option>
+          <option value={5}>CODE CATALYST</option>
+          <option value={6}>BUG BUSTERS</option>
+          <option value={9}>CAMPUS QUEST</option>
           <option value={10}>IPL AUCTION</option>
-          <option value={11}>CHATGPT PULSE</option>
-          <option value={12}>Checkmate Chronicles</option>
-          <option value={13}>Collab with Quizzers Anonymous</option>
+          <option value={11}>MONEY HEIST</option>
+          <option value={12}>THE LANGTON PARADOX</option>
           <option value={14}>OLPC</option>
-          <option value={15}>LIGHTS, CAMERA, REEL!</option>
-          <option value={16}>WAR OF THE RACKETS</option>
-          <option value={17}>Grand Cricket League (GCL)</option>
-          <option value={18}>
-            CSEA SUPER LEAGUE (CSL) - Kick, Pass, Goal!
-          </option>
-          <option value={21}>
-            Neonova - AU IEEE Computer Society's Ideathon
-          </option>
+          <option value={15}>CLICKIFY</option>
+          <option value={16}>RALLY ROYALE</option>
+          <option value={17}>BOUNDARY BASH</option>
+          <option value={18}>KICK OF FIESTA</option>
         </select>
       </div>
       {/* <div className="flex flex-row items-center mx-10 my-5">
