@@ -209,7 +209,7 @@ export default function RegisterNewUser() {
                             <option disabled selected>--Select--</option>
                             <option value={"J.J. College of Engineering and Technology, Tiruchirappalli"}>"J.J. College of Engineering and Technology, Tiruchirappalli</option>
                         </select>
-                    </div> */}
+                    </div>*/}
           <div className="mb-2 w-64 sm:w-64 md:w-64 lg:w-80">
             <label className="text-sm font-semibold mb-2 "> referralCode: </label>
             <input
