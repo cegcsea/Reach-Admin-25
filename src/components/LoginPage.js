@@ -10,7 +10,7 @@ const LoginPage = () => {
     email: "",
     password: ""
   })
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value })
   }
@@ -35,9 +35,6 @@ const LoginPage = () => {
     } catch (error) {
       console.error("Error Response:", error.response); // Log full error details
       Swal.close();
-      const message = error.response?.data?.message || "An unexpected error occurred.";
-      // Set the error state so your JSX can render it
-      setError(message);
       Swal.fire({
         title: error.response?.data?.error || "Error",
         text: error.response?.data?.message || "An unexpected error occurred.",
@@ -76,10 +73,10 @@ const LoginPage = () => {
             <label className='block text-sm font-semibold '>Password: </label>
             <input type="password" name="password" value={data.password} onChange={handleChange} className='block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40' required ></input><br></br>
           </div>
-          {error &&
+          {/* {error &&
             <div className='text-orange-500 font-serif'>
               {error}
-            </div>}
+            </div>} */}
           <div className='mt-6'>
           <input
   type="submit"
