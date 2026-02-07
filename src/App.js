@@ -14,6 +14,7 @@ import EventList from './components/EventList'
 import WorkshopPayments from './components/WorkshopPayments';
 import Queries from './components/Queries';
 import RegisterNewUser from './components/RegisterNewUser';
+import AllRegistrations from "./components/AllRegistrations";
 function App() {
   return (
     <Routes>
@@ -23,6 +24,7 @@ function App() {
         <Route element={<RequireAuth />}>
           <Route path='/dashboard' element={<Dashboard />}></Route>
           <Route path='/register-user' element={<RegisterNewUser />}></Route>
+          <Route path="/all-registrations" element={<AllRegistrations />} />
           <Route path='/add-admin' element={<AddAdmin />}></Route>
           <Route path='/change-password' element={<ChangePassword />}></Route>
           <Route path='/verify-workshop-payment' element={<VerifyWorkshopPayment />}></Route>
