@@ -10,7 +10,7 @@ export default function RegisterNewUser() {
     dept: "",
     college: "",
     password: "",
-    accomodation: "",
+    // accomodation: "",
     referralCode: "",
   });
   const handleSelectChange = (name, value) => {
@@ -30,8 +30,8 @@ export default function RegisterNewUser() {
       data.name === "" ||
       data.mobile === "" ||
       data.dept === "" ||
-      data.college === "" ||
-      data.accomodation === "" 
+      data.college === ""
+      // data.accomodation === "" 
     ) {
       setError("Please enter a valid username and password");
       return;
@@ -62,7 +62,7 @@ export default function RegisterNewUser() {
             year: parseInt(data.year),
             dept: data.dept.toString(),
             college: data.college.toString(),
-            accomodation: data.accomodation,
+            // accomodation: data.accomodation,
             referralCode: data.referralCode,
           },
           {
@@ -166,7 +166,7 @@ export default function RegisterNewUser() {
             ></input>
             <br></br>
           </div>
-          <div className="mb-2 w-64 sm:w-64 md:w-64 lg:w-80">
+          {/* <div className="mb-2 w-64 sm:w-64 md:w-64 lg:w-80">
             <label className="text-sm font-semibold mb-2">Accodomation:</label>
             <select
               placeholder="Do you need Accodomation in CEG?"
@@ -201,7 +201,7 @@ export default function RegisterNewUser() {
               </option>
             </select>
             <br></br>
-          </div>
+          </div> */}
 
           {/* <div className='mb-2 w-64 sm:w-64 md:w-64 lg:w-80'>
                         <label className='text-sm font-semibold mb-2'>Host College:</label><br></br>
