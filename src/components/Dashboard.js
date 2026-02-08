@@ -5,8 +5,8 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   const cards = [
-    { title: "Register New User", path: "/register-user" },
-    { title: "Register Campus Ambassador", path: "/register-ca" },
+    // { title: "Register New User", path: "/register-user" },
+    // { title: "Register Campus Ambassador", path: "/register-ca" },
 
     { title: "Workshop Registrations", path: "/workshop-list" },
     { title: "Event Registrations", path: "/event-list" },
