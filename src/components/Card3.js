@@ -55,7 +55,7 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
 
             {/* Change the input type from 'radio' to 'checkbox' */}
             <input type="checkbox"/>
-            <div className="collapse-title text-md text-white font-medium z-0">
+            <div className="collapse-title text-md font-medium z-0">
 
                 {data.title}
             </div>
