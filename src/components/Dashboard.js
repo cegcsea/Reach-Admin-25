@@ -12,10 +12,10 @@ const Dashboard = () => {
     { title: "Event Registrations", path: "/event-list" },
 
     { title: "Verify Workshop Payments", path: "/verify-workshop-payment" },
-    { title: "Verify Event Payments", path: "/verify-event-payment" },
+    // { title: "Verify Event Payments", path: "/verify-event-payment" },
 
     { title: "Workshop Payments", path: "/workshop-payments" },
-    { title: "Event Payments", path: "/event-payments" },
+    // { title: "Event Payments", path: "/event-payments" },
 
     { title: "Queries", path: "/queries" },
   ];
