@@ -54,7 +54,7 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
         <div className="collapse collapse-arrow bg-base-200">
 
             {/* Change the input type from 'radio' to 'checkbox' */}
-            <input type="checkbox" className='text-white' />
+            <input type="checkbox"/>
             <div className="collapse-title text-md text-white font-medium z-0">
 
                 {data.title}
