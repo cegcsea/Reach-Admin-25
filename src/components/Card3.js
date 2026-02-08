@@ -26,7 +26,7 @@ const Card3 = ({ data, fullData, setData, fullFilteredData, setFilteredData }) =
                 console.log('Data ID:', data.id); // Ensure this is valid
 
                 // Update query status to 'replied' in the backend using PUT
-                await axios.put('/admin/set-query-replied', {
+                await axios.post('/admin/set-query-replied', {
                     id: data.id
                 }, {
                     headers: {
