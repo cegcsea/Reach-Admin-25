@@ -57,11 +57,11 @@ export default function EventList() {
           <option value={10}>IPL AUCTION</option>
           <option value={11}>MONEY HEIST</option>
           <option value={12}>THE LANGTON PARADOX</option>
-          <option value={14}>OLPC</option>
+          {/* <option value={14}>OLPC</option>
           <option value={15}>CLICKIFY</option>
           <option value={16}>RALLY ROYALE</option>
           <option value={17}>BOUNDARY BASH</option>
-          <option value={18}>KICK OF FIESTA</option>
+          <option value={18}>KICK OF FIESTA</option> */}
         </select>
       </div>
       {/* <div className="flex flex-row items-center mx-10 my-5">
