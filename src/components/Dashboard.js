@@ -8,6 +8,8 @@ const Dashboard = () => {
     // { title: "Register New User", path: "/register-user" },
     // { title: "Register Campus Ambassador", path: "/register-ca" },
 
+    { title: "View Ambassadors", path: "/ambassadors" },
+
     { title: "Workshop Registrations", path: "/workshop-list" },
     { title: "Event Registrations", path: "/event-list" },
 

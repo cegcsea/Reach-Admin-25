@@ -66,12 +66,13 @@ export default function WorkshopPayments() {
             --Select--
           </option>
           <option value={1}>
-            Emergence of AI Engineers and Evolution of Vibe coding
+            Cloud Computing Essentials in the Era of AI
           </option>
           <option value={2}>
-            API & Kubernetes: The Dynamic Duo of Modern Tech
+            Mastering MCP - Building Context-Aware AI Apps
           </option>
-          <option value={3}>Linux Networking Essentials</option>
+          <option value={0}>BULK REGISTER (Both Workshops)</option>
+          {/* <option value={3}>Linux Networking Essentials</option> */}
         </select>
       </div>
       {/* <div className="flex flex-row items-center mx-10 my-5">

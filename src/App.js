@@ -18,6 +18,8 @@ import RegisterCampusAmbassador from "./components/RegisterCA";
 import EventCashPayment from "./components/EventCashPayment";
 import EventPayments from "./components/EventPayment";
 import VerifyEventPayment from "./components/verifyEventPayments";
+import Ambassadors from "./components/Ambassadors";
+import AmbassadorStats from "./components/AmbassadorStats";
 function App() {
   return (
     <Routes>
@@ -59,6 +61,8 @@ function App() {
             path="/register-ca"
             element={<RegisterCampusAmbassador />}
           ></Route>
+          <Route path="/ambassadors" element={<Ambassadors />} />
+          <Route path="/ambassador/:referralCode" element={<AmbassadorStats />} />
         </Route>
         <Route path="*" element={<Missing />} />
       </Route>
