@@ -53,10 +53,14 @@ export default function EventList() {
           <option value={4}>ALGOBAZZAR</option>
           <option value={5}>CODE CATALYST</option>
           <option value={6}>BUG BUSTERS</option>
+          <option value={7}>ZERO TRACE</option>
+          <option value={8}>BLACKOUT</option>
           <option value={9}>CAMPUS QUEST</option>
           <option value={10}>IPL AUCTION</option>
-          <option value={11}>MONEY HEIST</option>
+          <option value={11}>MEMORY HEIST</option>
           <option value={12}>THE LANGTON PARADOX</option>
+          <option value={13}>MCU vs DC QUIZ</option>
+          <option value={19}>NEONOVA - IDEATHON</option>
           {/* <option value={14}>OLPC</option>
           <option value={15}>CLICKIFY</option>
           <option value={16}>RALLY ROYALE</option>
